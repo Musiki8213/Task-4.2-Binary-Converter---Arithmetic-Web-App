@@ -1,0 +1,111 @@
+#logo{
+    width: 10%;
+    height: auto;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(218, 222, 226);
+    height: 150px;
+}
+nav ul{
+
+    display: flex;
+    gap: 100px;
+    list-style: none;
+    padding-right: 200px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: 800;
+    padding-top: 40px;
+    color: rgb(10, 67, 143);
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+#from-to{
+    display: flex;
+    gap: 40px;
+    padding-left: 150px;
+    padding-top: 40px;
+}
+#input-output{
+    display: flex;
+    gap: 60px;
+     justify-content: center;
+
+}
+form{
+    background-color: rgb(199, 203, 209);
+    border: 1px solid rgb(222, 225, 230);
+    border-radius: 50px;
+    width: 800px;
+    height: 600px;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+#fromLabel select{
+    padding: 10px;
+    width: 200px;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+option{
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#toLabel select{
+    padding: 10px;
+    width: 200px;
+}
+
+#inputLabel,#outputLabel{
+
+    padding-top: 20px;
+    padding-left: 20px;
+}
+#inputLabel input{
+    padding: 20px;
+}
+#outputLabel input{
+    padding: 20px;
+}
+#convertBtn,#clearBtn{
+    padding: 10px;
+}
+#buttonFlex{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+#binaryTranslator{
+    padding-left: 600px;
+}
+#subTitle{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+}
+#binaryTitle{
+color: rgb(51, 10, 165);
+}
+#translatorTitle{
+color: rgb(185, 27, 233);
+}
+#clearBtn{
+    border-radius: 20px;
+    padding: 15px;
+    width: 100px;
+}
+#convertBtn{
+    border-radius: 20px;
+    padding: 15px;
+    width: 100px;
+}

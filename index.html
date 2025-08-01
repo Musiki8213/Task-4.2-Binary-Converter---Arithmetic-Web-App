@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Convertor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+
+    <!----------------------------Binary Translator--------------------------->
+    <nav>
+      <img id="logo" src="assets/purple logo.png" alt="logo" />
+      <ul>
+        <li>About Us</li>
+        <li>Calculator</li>
+        <li>BODMAS</li>
+      </ul>
+    </nav>
+<br>
+<div id="subTitle">
+    <h2 id="binaryTitle">Binary</h2>
+    <h2 id="translatorTitle">Translator</h2>  
+</div>
+    <br>
+    <div id="binaryTranslator">
+    <form>
+      <div id="from-to">
+        <div id="fromLabel">
+          <label>From: </label><br />
+          <select id="number" name="number">
+            <option id="disabled" disabled selected>----Pick input type----</option>
+            <option value="binary">Binary</option>
+            <option value="decimal">Decimal</option>
+          </select>
+        </div>
+        <div id="toLabel">
+          <label>To: </label><br />
+          <select id="number" name="number">
+            <option id="disabled"  disabled selected>----Pick input type----</option>
+            <option value="binary">Binary</option>
+            <option value="decimal">Decimal</option>
+          </select>
+        </div>
+      </div>
+    <br><br>
+      <div id="input-output">
+        <div id="inputLabel">
+            <label>Input</label><br>
+                <input type="text" id="inputNumber" name="inputNumber" placeholder="Enter a number to convert"/>
+        </div>
+        <div id="outputLabel">
+            <label>Output</label><br>
+                <input type="text" id="outputNumber" name="outputNumber"/>
+        </div>
+      </div>
+      <br><br>
+
+      <div id="buttonFlex">
+      <div id="convertDiv">
+      <button id="convertBtn">Convert</button>
+      </div>
+      <div id="clearDiv">
+      <button id="clearBtn">Clear</button>
+      </div>
+      </div>
+    </form>
+    </div>
+
+    <!----------------------------Binary Translator--------------------------->
+
+
+  </body>
+</html>
