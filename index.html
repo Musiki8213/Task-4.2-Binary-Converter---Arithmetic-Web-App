@@ -4,72 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Binary Convertor</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
-
-
-    <!----------------------------Binary Translator--------------------------->
+    <!---------------------------- Navigation --------------------------->
     <nav>
       <img id="logo" src="assets/purple logo.png" alt="logo" />
       <ul>
-        <li>About Us</li>
-        <li>Calculator</li>
-        <li>BODMAS</li>
+        <li><a href="aboutUs.html" target="_blank">About Us</a></li>
+
+        <li><a href="calculator.html" target="_blank">Calculator</a></li>
+
+        <li><a href="bodmas.html" target="_blank">BODMAS</a></li>
       </ul>
     </nav>
-<br>
-<div id="subTitle">
-    <h2 id="binaryTitle">Binary</h2>
-    <h2 id="translatorTitle">Translator</h2>  
-</div>
-    <br>
-    <div id="binaryTranslator">
-    <form>
-      <div id="from-to">
-        <div id="fromLabel">
-          <label>From: </label><br />
-          <select id="number" name="number">
-            <option id="disabled" disabled selected>----Pick input type----</option>
-            <option value="binary">Binary</option>
-            <option value="decimal">Decimal</option>
-          </select>
-        </div>
-        <div id="toLabel">
-          <label>To: </label><br />
-          <select id="number" name="number">
-            <option id="disabled"  disabled selected>----Pick input type----</option>
-            <option value="binary">Binary</option>
-            <option value="decimal">Decimal</option>
-          </select>
-        </div>
-      </div>
-    <br><br>
-      <div id="input-output">
-        <div id="inputLabel">
-            <label>Input</label><br>
-                <input type="text" id="inputNumber" name="inputNumber" placeholder="Enter a number to convert"/>
-        </div>
-        <div id="outputLabel">
-            <label>Output</label><br>
-                <input type="text" id="outputNumber" name="outputNumber"/>
-        </div>
-      </div>
-      <br><br>
 
-      <div id="buttonFlex">
-      <div id="convertDiv">
-      <button id="convertBtn">Convert</button>
-      </div>
-      <div id="clearDiv">
-      <button id="clearBtn">Clear</button>
-      </div>
-      </div>
-    </form>
+    <br />
+
+    <!---------------------------- Title --------------------------->
+    <div id="subTitle">
+      <h1 id="binaryTitle">Binary</h1>
+      <h1 id="translatorTitle">Translator</h1>
     </div>
 
-    <!----------------------------Binary Translator--------------------------->
+    <br />
 
+    <!---------------------------- Binary Translator --------------------------->
+    <div id="binaryTranslator">
+      <form>
+        <div id="from-to">
+          <div id="fromLabel">
+            <label for="fromNumber">From:</label><br />
+            <select id="fromNumber" name="fromNumber" required>
+              <option value="" disabled selected hidden>
+                ----Pick input type----
+              </option>
+              <option value="binary">Binary</option>
+              <option value="decimal">Decimal</option>
+            </select>
+          </div>
+          <div id="toLabel">
+            <label for="toNumber">To:</label><br />
+            <select id="toNumber" name="toNumber" required>
+              <option value="" disabled selected hidden>
+                ----Pick input type----
+              </option>
+              <option value="binary">Binary</option>
+              <option value="decimal">Decimal</option>
+            </select>
+          </div>
+        </div>
 
+        <br /><br />
+
+        <div id="input-output">
+          <div id="inputLabel">
+            <label for="inputNumber">Input</label><br />
+            <input
+              type="text"
+              id="inputNumber"
+              name="inputNumber"
+              placeholder="Enter a number to convert"
+              required
+            />
+          </div>
+          <div id="outputLabel">
+            <label for="outputNumber">Output</label><br />
+            <input type="text" id="outputNumber" name="outputNumber" readonly />
+          </div>
+        </div>
+
+        <br /><br />
+
+        <div id="buttonFlex">
+          <div id="convertDiv">
+            <button type="button" id="convertBtn">Convert</button>
+          </div>
+          <div id="clearDiv">
+            <button type="button" id="clearBtn">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
