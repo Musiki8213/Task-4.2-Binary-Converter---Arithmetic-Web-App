@@ -1,0 +1,6 @@
+#fileTransDiv,#tempDiv,#scientDiv,#metricDiv{
+    display: none;
+}
+#buttonsDiv{
+display: flex;
+}

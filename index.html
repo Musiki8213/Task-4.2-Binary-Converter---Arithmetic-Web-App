@@ -16,6 +16,8 @@
         <li><a href="calculator.html" target="_blank">Calculator</a></li>
 
         <li><a href="bodmas.html" target="_blank">BODMAS</a></li>
+
+        <li><a href="converter.html" target="_blank">Convert Hub</a></li>
       </ul>
     </nav>
 
@@ -70,7 +72,7 @@
           </div>
           <div id="outputLabel">
             <label for="outputNumber">Output</label><br />
-            <input type="text" id="outputNumber" name="outputNumber" readonly />
+            <input type="text" id="outputNumber" name="outputNumber" readonly/>
           </div>
         </div>
 
@@ -78,10 +80,10 @@
 
         <div id="buttonFlex">
           <div id="convertDiv">
-            <button type="button" id="convertBtn">Convert</button>
+            <button id="convertBtn" onclick="translator()">Convert</button>
           </div>
           <div id="clearDiv">
-            <button type="button" id="clearBtn">Clear</button>
+            <button id="clearBtn" onclick="clear()">Clear</button>
           </div>
         </div>
       </form>

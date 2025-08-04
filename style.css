@@ -112,7 +112,7 @@ cursor: pointer;
 }
 
 #binaryTranslator{
-    padding-left: 300px;
+    padding-left: 600px;
     
 }
 #subTitle{
@@ -206,7 +206,7 @@ select {
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 40px;
       margin-top: 50px;
       background-color: #e0e0e0;
       color: #555;
@@ -255,7 +255,7 @@ select {
   font-weight: 600;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+
 }
 
 #binaryCalculator button:hover {
