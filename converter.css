@@ -4,3 +4,11 @@
 #buttonsDiv{
 display: flex;
 }
+#metricValuesFlex{
+    display: flex;
+    gap: 20px;
+}
+#increase, #decrease{
+    display: none;
+}
+

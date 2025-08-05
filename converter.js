@@ -6,7 +6,20 @@ function hideAllForms() {
   metricform.style.display = 'none';
 }
 
+const  plusBtn = document.getElementById("increase");
+const minusBtn = document.getElementById("decrease");
+const output = document.getElementById("sizeNumber");
+let count = 0;
 
+plusBtn.addEventListener("click", function () {
+  count++;
+  output.value = count;
+});
+minusBtn.addEventListener("click", function () {
+  count--;
+  output.value = count;
+}
+);
 //FILE TRANSFER
 const fileBtn = document.getElementById("FileTransferBtn")
 const fileForm = document.getElementById("fileTransDiv")
