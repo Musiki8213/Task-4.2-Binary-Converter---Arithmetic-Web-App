@@ -54,29 +54,38 @@
         <input type="text" id="convertNumber" name="convertNumber" />
         <br /><br /><br />
 
+        <label>From</label><br />
         <select id="degree">
           <option value="celsius">Celsius(°C)</option>
           <option value="fahrenheit">Fahrenheit(°F)</option>
         </select>
+      <br /><br /><br/>
+      <label>Output</label><br />
+        <input type="text" id="degreeResult" readonly/>
       
-      <br /><br /><br />
-      <button>Convert</button>
+      <br /><br /><br/>
+      
+      <button id="tempConvertBtn">Convert</button>
     </div>
 
     <div id="scientDiv">
       <h2>Scientific Notation Converter</h2>
 
-      <form>
-        <label>Standard Number</label><br />
-        <input type="text" id="standardNumber" name="standardNumber" />
-      </form>
+
+        <label>Standard Number</label><br/>
+        <input type="number" id="standardNumber" value="0" min="0" max="100" step="1"/>
+      
+        <br /><br /><br />
+        <label>Output</label><br />
+        <input type="text" id="scientificOutput" readonly/>
+      
       <br /><br /><br />
-      <button>Convert</button>
+      <button id="scientificConvertBtn">Convert</button>
     </div>
 
     <div id="metricDiv">
       <h2>Metric Prefix Converter</h2>
-      <form>
+      
         <label>Value</label><br />
         <input type="text" id="valueNumber" name="valueNumber" />
         <br /><br />
@@ -104,9 +113,9 @@
             </select>
           </div>
         </div>
-      </form>
+     
       <br /><br /><br />
-      <button>Convert</button>
+      <button id="metricConvertBtn">Convert</button>
     </div>
 
     
