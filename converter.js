@@ -5,19 +5,9 @@ function hideAllForms() {
   metricform.style.display = "none";
 }
 
-const plusBtn = document.getElementById("increase");
-const minusBtn = document.getElementById("decrease");
-const output = document.getElementById("sizeNumber");
-let count = 0;
 
-plusBtn.addEventListener("click", function () {
-  count++;
-  output.value = count;
-});
-minusBtn.addEventListener("click", function () {
-  count--;
-  output.value = count;
-});
+
+
 //FILE TRANSFER
 const fileBtn = document.getElementById("FileTransferBtn");
 const fileForm = document.getElementById("fileTransDiv");
@@ -31,6 +21,78 @@ function fileShow() {
     fileForm.style.display = "none";
   }
 }
+
+
+
+//Calculations
+
+const sizeInput = document.getElementById("sizeCounter");
+const speedInput = document.getElementById("speedCounter");
+const sizeUnit = document.getElementById("sizeBits");
+const speedUnit = document.getElementById("speedBits");
+const fileFinalResult = document.getElementById("fileResults");
+const fileConvertBtn = document.getElementById("fileConvertBtn");
+
+let fileResults;
+
+fileConvertBtn.addEventListener("click",function () {
+
+  const sizeValue = parseFloat(sizeInput.value);
+  const speedValue = parseFloat(speedInput.value);
+  const sizeUnitValue = sizeUnit.value;
+  const speedUnitValue = speedUnit.value;
+
+  if (sizeUnitValue === "kilobytes") {
+    fileResults = sizeValue * 1024 * 8;
+  } 
+  else if (sizeUnitValue === "megabytes") {
+    fileResults = sizeValue * 1024 * 1024 * 8;
+  } 
+  else if (sizeUnitValue === "gigabytes") {
+    fileResults = sizeValue * 1024 * 1024 * 1024 * 8;
+  } 
+  else if (speedUnitValue === "kilobits") {
+    fileResults = speedValue * 1000;
+  } 
+  else if (speedUnitValue === "megabits") {
+    fileResults = speedValue * 1000000;
+  } 
+  else if (speedUnitValue === "gigabits") {
+    fileResults = speedValue * 1000000000;
+  } 
+  else {
+    fileResults = 0;
+  }
+
+   // Convert speed to bits per second
+  let speedResuls;
+  if (speedUnitValue === "kilobits") {
+    speedResuls = speedValue * 1000;
+  } else if (speedUnitValue === "megabits") {
+    speedResuls = speedValue * 1000000;
+  } else if (speedUnitValue === "gigabits") {
+    speedResuls = speedValue * 1000000000;
+  } else {
+    fileFinalResult.value = "Invalid speed unit";
+    return;
+  }
+
+  fileFinalResult.value = fileResults;
+
+    // Calculate total time in seconds
+  const totalSeconds = fileResults / speedResuls;
+
+  // Convert seconds to hours, minutes, seconds
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = Math.floor(totalSeconds % 60);
+
+  fileFinalResult.value = `${hours}h ${minutes}m ${seconds}s`;
+
+});
+
+
+
 
 //======================================================TEMPERATURE=========================================//
 
@@ -77,6 +139,8 @@ function tempShow() {
 
 //Calculations
 
+const scientificConvertBtn = document.getElementById("scientificConvertBtn");
+
 scientificConvertBtn.addEventListener("click", function () {
   const scientInputNumber = document.getElementById("standardNumber").value;
   const scientificOutputFinal = document.getElementById("scientificOutput");
@@ -109,139 +173,117 @@ function scienShow() {
 //===============================================METRIC==================================================//
 
 //Calculations
+const metricConvertBtn = document.getElementById("metricConvertBtn");
+metricConvertBtn.addEventListener("click", function () {
+  const metricInputNumber = parseFloat(document.getElementById("valueNumber").value);
+  const selectMetricOption = document.getElementById("metricFromValues").value;
+  const selectMetricOption2 = document.getElementById("metricToValues").value;
+  const resultField = document.getElementById("metricResult");
 
-metricConvertBtn.addEventListener("click", function(){
-const metricInputNumber = document.getElementById("valueNumber").value;
- const selectMetricOption = document.getElementById("metricFromValues");
- const selectMetricOption2 = document.getElementById("metricToValues");
+  if (isNaN(metricInputNumber)) {
+    resultField.value = "Enter a valid number";
+    return;
+  }
 
-//giga
- if(selectMetricOption === "giga" && selectMetricOption2 === "mega" ){
-    
-    metricInputNumber * 1000;
+  let result;
 
- }else if(selectMetricOption === "giga" && selectMetricOption2 === "kilo"){
-      metricInputNumber * 1000000;
- }
- else if(selectMetricOption === "giga" && selectMetricOption2 === "base unit"){
-           metricInputNumber * 1000000000;
- }
+  // Giga conversions
+  if (selectMetricOption === "giga" && selectMetricOption2 === "mega") {
+    result = metricInputNumber * 1000;
+  } else if (selectMetricOption === "giga" && selectMetricOption2 === "kilo") {
+    result = metricInputNumber * 1_000_000;
+  } else if (selectMetricOption === "giga" && selectMetricOption2 === "base unit") {
+    result = metricInputNumber * 1_000_000_000;
+  } else if (selectMetricOption === "giga" && selectMetricOption2 === "milli") {
+    result = metricInputNumber * 1e12;
+  } else if (selectMetricOption === "giga" && selectMetricOption2 === "micro") {
+    result = metricInputNumber * 1e15;
+  }
 
- else if(selectMetricOption === "giga" && selectMetricOption2 === "milli"){
-                metricInputNumber * Math.pow(10, 12);
- }
+  // Mega conversions
+  else if (selectMetricOption === "mega" && selectMetricOption2 === "giga") {
+    result = metricInputNumber * 0.001;
+  } else if (selectMetricOption === "mega" && selectMetricOption2 === "kilo") {
+    result = metricInputNumber * 1000;
+  } else if (selectMetricOption === "mega" && selectMetricOption2 === "base unit") {
+    result = metricInputNumber * 1_000_000;
+  } else if (selectMetricOption === "mega" && selectMetricOption2 === "milli") {
+    result = metricInputNumber * 1e9;
+  } else if (selectMetricOption === "mega" && selectMetricOption2 === "micro") {
+    result = metricInputNumber * 1e12;
+  }
 
- else if(selectMetricOption === "giga" && selectMetricOption2 === "micro"){
-              metricInputNumber * Math.pow(10, 15);
- }
+  // Kilo conversions
+  else if (selectMetricOption === "kilo" && selectMetricOption2 === "giga") {
+    result = metricInputNumber / 1e6;
+  } else if (selectMetricOption === "kilo" && selectMetricOption2 === "mega") {
+    result = metricInputNumber / 1000;
+  } else if (selectMetricOption === "kilo" && selectMetricOption2 === "base unit") {
+    result = metricInputNumber * 1000;
+  } else if (selectMetricOption === "kilo" && selectMetricOption2 === "milli") {
+    result = metricInputNumber * 1e6;
+  } else if (selectMetricOption === "kilo" && selectMetricOption2 === "micro") {
+    result = metricInputNumber * 1e9;
+  }
 
+  // Base unit conversions
+  else if (selectMetricOption === "base unit" && selectMetricOption2 === "giga") {
+    result = metricInputNumber / 1e9;
+  } else if (selectMetricOption === "base unit" && selectMetricOption2 === "mega") {
+    result = metricInputNumber / 1e6;
+  } else if (selectMetricOption === "base unit" && selectMetricOption2 === "kilo") {
+    result = metricInputNumber / 1000;
+  } else if (selectMetricOption === "base unit" && selectMetricOption2 === "milli") {
+    result = metricInputNumber * 1000;
+  } else if (selectMetricOption === "base unit" && selectMetricOption2 === "micro") {
+    result = metricInputNumber * 1e6;
+  }
 
-//mega
- else if(selectMetricOption === "mega" && selectMetricOption2 === "giga"){
-metricInputNumber * 0.001;
- }
+  // Milli conversions
+  else if (selectMetricOption === "milli" && selectMetricOption2 === "giga") {
+    result = metricInputNumber / 1e12;
+  } else if (selectMetricOption === "milli" && selectMetricOption2 === "mega") {
+    result = metricInputNumber / 1e9;
+  } else if (selectMetricOption === "milli" && selectMetricOption2 === "kilo") {
+    result = metricInputNumber / 1e6;
+  } else if (selectMetricOption === "milli" && selectMetricOption2 === "base unit") {
+    result = metricInputNumber / 1000;
+  } else if (selectMetricOption === "milli" && selectMetricOption2 === "micro") {
+    result = metricInputNumber * 1000;
+  }
 
- else if(selectMetricOption === "mega" && selectMetricOption2 === "kilo"){
-metricInputNumber * 1000;
- }
-
- else if(selectMetricOption === "mega" && selectMetricOption2 === "base unit"){
-metricInputNumber * 1000000
- }
-
- else if(selectMetricOption === "mega" && selectMetricOption2 === "milli"){
-metricInputNumber * Math.pow(10, 9);
- }
-
- else if(selectMetricOption === "mega" && selectMetricOption2 === "micro"){
-metricInputNumber * Math.pow(10, 12);
- }
-
- //milli
- else if(selectMetricOption === "milli" && selectMetricOption2 === "base unit"){
-metricInputNumber * 0.001;
- }
-
- else if(selectMetricOption === "milli" && selectMetricOption2 === "kilo"){
-metricInputNumber * Math.pow(10, -6);
- }
-
- else if(selectMetricOption === "milli" && selectMetricOption2 === "micro"){
-metricInputNumber * 1000;
- }
- else if(selectMetricOption === "milli" && selectMetricOption2 === "mega"){
-metricInputNumber * Math.pow(10, -9);
- }
-else if(selectMetricOption === "milli" && selectMetricOption2 === "giga"){
-metricInputNumber * 1000000000;
- }
-
-//kilo
-
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-
- //base unit
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
+  // Micro conversions
+  else if (selectMetricOption === "micro" && selectMetricOption2 === "giga") {
+    result = metricInputNumber / 1e15;
+  } else if (selectMetricOption === "micro" && selectMetricOption2 === "mega") {
+    result = metricInputNumber / 1e12;
+  } else if (selectMetricOption === "micro" && selectMetricOption2 === "kilo") {
+    result = metricInputNumber / 1e9;
+  } else if (selectMetricOption === "micro" && selectMetricOption2 === "base unit") {
+    result = metricInputNumber / 1e6;
+  } else if (selectMetricOption === "micro" && selectMetricOption2 === "milli") {
+    result = metricInputNumber / 1000;
+  }
 
 
- //micro
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
- else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
-else if(selectMetricOption === "" && selectMetricOption2 === ""){
-metricInputNumber * Math.pow(, );
- }
+  else if (selectMetricOption === selectMetricOption2) {
+    result = metricInputNumber;
+  }
 
 
+  else {
+    result = "Invalid conversion";
+  }
+
+  resultField.value = result;
 });
 
+  const metricform = document.getElementById("metricDiv");
 
-
-
-
-//Hiding and showing the div
-const metricBtn = document.getElementById("MetricBtn");
-const metricform = document.getElementById("metricDiv");
 
 function metricShow() {
-  hideAllForms();
+    hideAllForms();
+
   if (metricform.style.display === "none" || metricform.style.display === "") {
     metricform.style.display = "block";
   } else {
