@@ -182,7 +182,189 @@ footer {
       color: #000000;
     }
 
+/* ================= Responsive Media Queries ================= */
 
+@media (max-width: 1440px) {
+
+    form {
+        width: 50%;
+        height: auto;
+        padding: 25px;
+        text-align: center;
+        justify-items: center;
+    }
+
+   
+    #from-to, #input-output {
+        flex-direction: row; 
+         gap: 20px;
+        padding-left: 40px;
+    }
+
+    
+    #buttonFlex {
+        padding-left: 80px;
+        gap: 25px;
+    }
+
+    #clearBtn, #convertBtn {
+        width: 120px;
+        padding: 12px;
+    }
+
+    
+    #subTitle {
+        gap: 8px;
+        font-size: 18px;
+    }
+
+    nav ul {
+        gap: 60px;
+        padding-right: 60px;
+        font-size: 16px;
+    }
+
+    #binaryTranslator {
+        padding-left: 400px;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    form {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    #from-to, #input-output {
+        flex-direction: column;
+        padding-left: 20px;
+        gap: 20px;
+    }
+
+    #buttonFlex {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    #binaryTranslator {
+        padding-left: 0;
+    }
+
+    nav ul {
+        gap: 50px;
+        padding-right: 50px;
+    }
+
+    #fromLabel select, #toLabel select, #inputLabel input, #outputLabel input {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 900px) {
+    header, #binaryTranslator {
+        padding-left: 10px;
+    }
+
+    #from-to, #input-output {
+        padding-left: 10px;
+        gap: 15px;
+    }
+
+    form {
+        width: 95%;
+        height: auto;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-right: 10px;
+    }
+
+    #buttonFlex {
+        flex-direction: column;
+        gap: 15px;
+        padding-left: 0;
+        align-items: center;
+    }
+
+    #clearBtn, #convertBtn {
+        width: 80%;
+    }
+
+    #subTitle {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+    }
+
+    #from-to, #input-output {
+        padding-left: 5px;
+        gap: 10px;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #buttonFlex {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #clearBtn, #convertBtn {
+        width: 100%;
+    }
+
+    #binaryTranslator {
+        padding-left: 0;
+    }
+}
+
+
+@media (max-width: 400px) {
+    #subTitle {
+        font-size: 14px;
+    }
+
+    #fromLabel select, #toLabel select, #inputLabel input, #outputLabel input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #clearBtn, #convertBtn {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    nav ul {
+        font-size: 14px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+}
 
     
 

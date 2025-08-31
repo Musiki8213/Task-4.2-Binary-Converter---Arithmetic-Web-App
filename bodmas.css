@@ -1,0 +1,68 @@
+/* Container */
+#bodmasCalculator {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: rgb(218, 222, 226);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Title */
+#bodmasCalculator h2 {
+  color: #004d99;
+  text-align: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 15px;
+}
+
+/* Label */
+#bodmasCalculator label {
+  color: rgb(10, 67, 143);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Input */
+#bodmasCalculator input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 15px 0;
+  border: 1px solid rgb(222, 225, 230);
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#bodmasCalculator input:focus {
+  outline: none;
+  border: 2px solid #993399;
+}
+
+/* Button */
+#bodmasCalculator button {
+  background-color: #993399;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#bodmasCalculator button:hover {
+  background-color: #b348b3;
+  transform: translateY(-1px);
+}
+
+/* Result */
+#bodmasCalculator p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #004d99;
+}
+
+#bodmasCalculator span {
+  font-weight: bold;
+}

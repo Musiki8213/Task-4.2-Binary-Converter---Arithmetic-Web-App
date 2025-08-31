@@ -1,0 +1,60 @@
+
+#ascii-table {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 10px;
+  overflow-x: auto;
+  background-color: rgb(218, 222, 226); /* matches nav/form background */
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+#ascii-table table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+}
+
+#ascii-table th, #ascii-table td {
+  border: 1px solid rgb(222, 225, 230);
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+#ascii-table th {
+  background-color: #004d99;
+  color: white;
+}
+
+#ascii-table td.number {
+  color: #004d99; 
+}
+
+#ascii-table td.lowercase {
+  color: #993399; 
+}
+
+#ascii-table td.uppercase {
+  color: #b348b3; 
+}
+#ascii-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#ascii-table tr:hover {
+  background-color: #d1e7dd;
+}
+
+
+@media (max-width: 600px) {
+  #ascii-table th, #ascii-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+  #ascii-table {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="bodmas.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <section id="bodmasCalculator">
+  <h2>Binary BODMAS Calculator</h2>
+  <br><br>
+  <form onsubmit="return false;">
+    <label for="binaryExpression">Enter Binary Expression:</label><br>
+    <input type="text" id="binaryExpression" placeholder="e.g., (1010 + 0101) * 10"><br>
+    <button onclick="calculateBinaryBODMAS()">Calculate</button>
+  </form>
+  <p>Result: <span id="bodmasResult"></span></p>
+</section>
+<script src="bodmas.js"></script>
+</body>
+</html>
